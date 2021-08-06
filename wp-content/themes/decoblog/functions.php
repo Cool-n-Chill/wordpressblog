@@ -140,10 +140,23 @@ add_action( 'widgets_init', 'decoblog_widgets_init' );
  * Enqueue scripts and styles.
  */
 function decoblog_scripts() {
-	wp_enqueue_style( 'decoblog-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'decoblog-style', 'rtl', 'replace' );
+    wp_enqueue_style( 'decoblog-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'decoblog-slick', get_template_directory_uri() . '/assets/css/slick.css' );
+    wp_enqueue_style( 'decoblog-slick-theme', get_template_directory_uri() . '/assets/css/slick-theme.css' );
+    wp_enqueue_style( 'decoblog-bootstrap-grid', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css' );
+    wp_enqueue_style( 'decoblog-bootstrap-icons', get_template_directory_uri() . '/assets/css/bootstrap-icons.css' );
+    wp_enqueue_style( 'decoblog-fancybox', get_template_directory_uri() . '/assets/css/fancybox.css' );
+    wp_enqueue_style( 'decoblog-styles', get_template_directory_uri() . '/assets/css/style.min.css' );
+    wp_enqueue_style( 'decoblog-custom', get_template_directory_uri() . '/assets/css/custom.css' );
 
-	wp_enqueue_script( 'decoblog-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery.min.js' );
+    wp_enqueue_script('jquery', '' ,  array(), '', true);
+
+    wp_enqueue_script( 'decoblog-bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '' , true );
+    wp_enqueue_script( 'decoblog-fancybox-js', get_template_directory_uri() . '/assets/js/fancybox.umd.js', array(), '' , true );
+    wp_enqueue_script( 'decoblog-slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array(), '' , true );
+    wp_enqueue_script( 'decoblog-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '' , true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

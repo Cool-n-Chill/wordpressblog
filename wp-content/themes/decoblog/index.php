@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="css/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/fancybox.css">
-    <link rel="stylesheet" href="css/style.min.css">
+
+    <?php wp_head() ?>
+
 </head>
 <body>
 <header class="header">
@@ -43,7 +40,7 @@
                 <button class="menu__close"><i class="bi bi-x-lg"></i></button>
             </nav>
             <div class="header__logo">
-                <img src="images/Logo.png" alt="" class="logo">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/Logo.png" alt="" class="logo">
                 <span class="logo-text">blog</span>
             </div>
             <div class="header__social-and-search">
@@ -133,7 +130,7 @@
                 <div class="posts__column col-lg-3">
                     <div class="post post-image">
                         <div class="post__image">
-                            <img src="./images/post-image.png" alt="post-image">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/post-image.png" alt="post-image">
                         </div>
                         <div class="post__content">
                             <div class="post__icon"><i class="bi bi-image"></i></div>
@@ -216,7 +213,7 @@
                     </div>
                     <div class="post post-gallery">
                         <div class="post__gallery">
-                            <img src="./images/post-image.png" alt="post-image">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/post-image.png" alt="post-image">
                         </div>
                         <div class="post__content">
                             <div class="post__icon"><i class="bi bi-image"></i></div>
@@ -305,7 +302,7 @@
             <div class="col-md-3 footer__column">
                 <h4 class="footer__title">about blog</h4>
                 <p class="footer__text">Lorem ipsum dolor sit amet, conser adipisicing  esse cillum dolore nulla pariatur.</p>
-                <img src="./images/footer-sign.png" alt="" class="footer__image">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/footer-sign.png" alt="" class="footer__image">
             </div>
             <div class="col-md-3 footer__column">
                 <h4 class="footer__title">latest tweets</h4>
@@ -332,16 +329,16 @@
                     <div class="instagram__block">
                         <div class="row">
                             <div class="col-4">
-                                <img src="./images/post-image.png" alt="">
-                                <img src="./images/post-image.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/images/post-image.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/images/post-image.png" alt="">
                             </div>
                             <div class="col-4">
-                                <img src="./images/post-image.png" alt="">
-                                <img src="./images/post-image.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/images/post-image.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/images/post-image.png" alt="">
                             </div>
                             <div class="col-4">
-                                <img src="./images/post-image.png" alt="">
-                                <img src="./images/post-image.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/images/post-image.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/images/post-image.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -366,10 +363,8 @@
         <span>@2015 copyright .all right reserved by awesome theme   |   terms policy   |   disclaimer</span>
     </div>
 </footer>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/fancybox.umd.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/main.min.js"></script>
+
+<?php wp_footer() ?>
+
 </body>
 </html>
