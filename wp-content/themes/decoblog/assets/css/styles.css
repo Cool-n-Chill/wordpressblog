@@ -780,9 +780,15 @@ template {
   font-size: 1.4em;
   z-index: 52;
 }
-.header__logo > .logo-text {
+.header__logo .header__link{
+  display: block;
+  display: flex;
+  align-items: center;
+}
+.header__logo .logo-text {
   margin: 0 10px;
   letter-spacing: 5px;
+  display: block;
 }
 
 @media (min-width: 576px) {
