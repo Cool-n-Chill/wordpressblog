@@ -158,12 +158,3 @@ wp-config.php
 
 #Custom ignore
 /wp-content/themes/decoblog/template/
-/wp-content/themes/decoblog/inc/languages/
-/wp-content/themes/decoblog/inc/plugins/
-/wp-content/themes/decoblog/inc/CHANGELOG.md
-/wp-content/themes/decoblog/inc/class-tgm-plugin-activation.php
-/wp-content/themes/decoblog/inc/CONTRIBUTING.md
-/wp-content/themes/decoblog/inc/example.php
-/wp-content/themes/decoblog/inc/LICENSE.md
-/wp-content/themes/decoblog/inc/README.md
-/wp-content/plugins/unyson/

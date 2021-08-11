@@ -50,7 +50,7 @@ if ( ! function_exists( 'decoblog_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'header-menu' => esc_html__( 'Header menu', 'decoblog' ),
+				'menu-1' => esc_html__( 'Primary', 'decoblog' ),
 			)
 		);
 
@@ -146,7 +146,7 @@ function decoblog_scripts() {
     wp_enqueue_style( 'decoblog-bootstrap-grid', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css' );
     wp_enqueue_style( 'decoblog-bootstrap-icons', get_template_directory_uri() . '/assets/css/bootstrap-icons.css' );
     wp_enqueue_style( 'decoblog-fancybox', get_template_directory_uri() . '/assets/css/fancybox.css' );
-    wp_enqueue_style( 'decoblog-styles', get_template_directory_uri() . '/assets/css/styles.css' );
+    wp_enqueue_style( 'decoblog-styles', get_template_directory_uri() . '/assets/css/style.min.css' );
     wp_enqueue_style( 'decoblog-custom', get_template_directory_uri() . '/assets/css/custom.css' );
 
     wp_deregister_script( 'jquery' );
@@ -191,4 +191,3 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-require_once get_template_directory() . '/inc/tgm/tgm.php';
