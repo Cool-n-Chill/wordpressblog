@@ -1076,6 +1076,9 @@ template {
   transition: box-shadow 0.3s ease-in-out;
   margin-bottom: 30px;
   flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .post:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -1102,11 +1105,14 @@ template {
 }
 
 .post__content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   position: relative;
   padding: 55px 30px 45px;
   text-align: center;
   border: 1px solid #f7f7f7;
+  flex: 1 1 auto;
 }
 
 .post__icon {
@@ -1589,15 +1595,23 @@ template {
 
 .post__audio {
   position: relative;
+  flex: 1 1 auto;
   margin-bottom: 30px;
 }
-
 @media (max-width: 768px) {
   .post__audio {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+@media (min-width: 992px) {
+  .post__audio-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 .audio__name,
@@ -1644,7 +1658,7 @@ template {
     margin-top: 10px;
   }
 }
-#sound {
+.post__audio audio {
   display: none;
 }
 
@@ -2003,7 +2017,7 @@ template {
     margin-bottom: 0;
   }
 }
-.footer__title {
+.footer__column h4 {
   font-family: "montserrat-bold";
   font-size: 1rem;
   text-transform: uppercase;
@@ -2011,18 +2025,18 @@ template {
 }
 
 @media (max-width: 767px) {
-  .footer__title {
+  .footer__column h4 {
     margin-bottom: 20px;
   }
 }
-.footer__text {
+.footer__column p {
   font-family: "hind-light";
   font-size: 1rem;
   margin-bottom: 15px;
   line-height: 1.5rem;
 }
 
-.footer__image {
+.footer__column img {
   width: 100%;
   height: auto;
 }
@@ -2068,19 +2082,14 @@ template {
   padding: 0;
 }
 
-.comment {
-  padding: 20px 0;
+.wp-block-latest-comments__comment {
   border-bottom: 1px solid #65676a;
 }
-.comment:first-child {
-  padding-top: 0;
-}
-.comment:last-child {
-  padding-bottom: 0;
+.wp-block-latest-comments__comment:last-child {
   border: none;
 }
 
-.comment__author {
+.wp-block-latest-comments__comment-meta {
   display: block;
   font-family: "hind-light";
   font-size: 1rem;

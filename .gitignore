@@ -158,3 +158,4 @@ wp-config.php
 
 #Custom ignore
 /wp-content/themes/decoblog/template/
+/wp-content/plugins/

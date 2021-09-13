@@ -100,7 +100,13 @@ if ( ! function_exists( 'decoblog_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
-	}
+
+
+        // Add theme support for selective refresh for widgets.
+        add_theme_support( 'post-formats',
+            array( 'gallery', 'link', 'image', 'video', 'status', 'quote', 'audio' ) );
+
+    }
 endif;
 add_action( 'after_setup_theme', 'decoblog_setup' );
 
@@ -124,13 +130,13 @@ add_action( 'after_setup_theme', 'decoblog_content_width', 0 );
 function decoblog_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'decoblog' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Footer', 'decoblog' ),
+			'id'            => 'footer',
 			'description'   => esc_html__( 'Add widgets here.', 'decoblog' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="%2$s col-md-3 footer__column">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="footer__title">',
+			'after_title'   => '</h4>',
 		)
 	);
 }
@@ -190,4 +196,34 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+//Custom functions
+
+//Removing media from content on mains
+function remove_post_media( $content )
+{
+    if (get_post_format() === 'audio') {
+        return $content;
+    } else {
+        return preg_replace('/<figure([\W\w]*)<\/figure>/', '', $content);
+    }
+}
+add_filter('the_content', 'remove_post_media');
+
+
+function add_post_thumbnail($html) {
+    if (get_post_format() === 'video') {
+        global $wp_embed;
+        preg_match('/<figure([\W\w]*)<\/figure>/', get_the_content(), $matches);
+        $thumbnail_video_link = preg_replace('/<(.*)>/', '', $matches[0]);
+        return $wp_embed->autoembed($thumbnail_video_link);
+    } elseif (get_post_format() === 'gallery') {
+        global $wp_embed;
+        preg_match('/<figure([\W\w]*)<\/figure>/', get_the_content(), $matches);
+        return $wp_embed->autoembed($matches[0]);
+    } else {
+        return $html;
+    }
+}
+add_filter( 'post_thumbnail_html', 'add_post_thumbnail');
 

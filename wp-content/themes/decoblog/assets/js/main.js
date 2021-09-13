@@ -73,7 +73,7 @@ $(document).ready(function(){
 
     //Sound custom
 
-    var audio = $("#sound");
+    var audio = $(".post__audio audio");
 	var duration = $('.audio__duration');
     $(".post__player").on('click', function() {
         $('.post__player').toggleClass('active');
@@ -102,4 +102,12 @@ $(document).ready(function(){
     }).on('mouseleave', function() {
         $(this).children().css('color', '#212121');
     })
+
+    //Form customization
+    $('#wpforms-form-59').addClass('container');
+
+    //Footer twitter
+    var tweet = $('.footer__column #ctf .ctf-item');
+    tweet.wrap("<div class='twit'></div>");
+    tweet.before("<div class='twit__icon'><i class='bi bi-twitter'></i></div>")
 });

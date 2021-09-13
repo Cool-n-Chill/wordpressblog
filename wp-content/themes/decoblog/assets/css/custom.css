@@ -1,0 +1,83 @@
+div#wpforms-59.wpforms-container-full{
+    background-color: #f9f9fb;
+    padding: 10px 0;
+    margin-bottom: 0;
+}
+div#wpforms-59.wpforms-container-full .wpforms-title{
+    margin-bottom: 0;
+    font-family: "montserrat-bold";
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+div#wpforms-59.wpforms-container-full form input {
+    height: 50px;
+    font-family: "hind-light";
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 2rem;
+    border: none;
+}
+div#wpforms-59.wpforms-container-full form button {
+    height: 50px;
+    background-color: #212121;
+    color: #fff;
+    font-family: "hind-medium";
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+@media (max-width: 600px) {
+    div#wpforms-59.wpforms-container-full .wpforms-form .wpforms-field {
+        padding-right: 0;
+    }
+}
+
+.post__content p{
+    font-family: "hind-light";
+    font-size: 1rem;
+    color: #464646;
+    margin-bottom: 40px;
+    line-height: 1.5rem;
+}
+.post__category a{
+    color: inherit;
+}
+
+.post-quote p{
+    color: #fff;
+}
+
+.post__link{
+    width: 95%;
+}
+.post__link p{
+    font-family: "hind-light";
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5rem;
+    word-wrap: break-word;
+    margin-bottom: 0;
+}
+
+#ctf .ctf-author-name, #ctf.ctf-super-narrow .ctf-author-screenname {
+    display: inline-block;
+    font-family: "hind-light";
+    font-size: 0.8rem;
+    margin: 0;
+}
+#ctf .ctf-tweet-content {
+    font-family: "hind-light";
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+#ctf .ctf-item{
+    padding: 0;
+    border-top: none;
+}
+.ctf-tweets{
+
+}
+#ctf.ctf-super-narrow .ctf-author-box{
+    min-height: unset;
+}
